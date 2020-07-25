@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-        home:  CupertinoPage());
+        home:  Hellopage());
   }
 }
 
@@ -48,6 +48,15 @@ class _HellopageState extends State<Hellopage> {
                     // 복수의 위젯을 넣고자 할때 배열에 넣는다
                     Text(_message,style:TextStyle(fontSize: 30)),
                     Text("$_count",style:TextStyle(fontSize: 30)),
+                    RaisedButton(
+                      child: Text("화면이동"),
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context)=> CupertinoPage())
+                        );
+                      },
+                    )
                     // int형을 text에 넣을경우 "$_count" 선언한다, 따옴표,$
                   ],
                 ),
