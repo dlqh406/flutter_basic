@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'cupertino_page.dart';
 //빌드가 시작됨
 void main() {
   runApp(MyApp());}
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-        home: Hellopage());
+        home:  CupertinoPage());
   }
 }
 
