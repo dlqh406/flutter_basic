@@ -27,11 +27,24 @@ class Hellopage extends StatefulWidget {
 }
 
 class _HellopageState extends State<Hellopage> {
+  String _message = "yet pushed";
+  // _variable : 여기 안에서만 사용하는 변수
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child : Icon(Icons.add),
+        onPressed: _chageMessage),
+
       appBar: AppBar(title : Text(widget.title),),
-        body: Text(widget.title,style:TextStyle(fontSize: 30))
+        body: Text(_message,style:TextStyle(fontSize: 30))
     );
+  }
+
+  void _chageMessage() {
+    setState(() {
+      _message = " pushed: greentea";
+    });
   }
 }
