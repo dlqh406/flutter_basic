@@ -28,6 +28,7 @@ class Hellopage extends StatefulWidget {
 
 class _HellopageState extends State<Hellopage> {
   String _message = "yet pushed";
+  int _count = 0;
   // _variable : 여기 안에서만 사용하는 변수
 
   @override
@@ -38,13 +39,28 @@ class _HellopageState extends State<Hellopage> {
         onPressed: _chageMessage),
 
       appBar: AppBar(title : Text(widget.title),),
-        body: Text(_message,style:TextStyle(fontSize: 30))
+        body: Center(
+            child:Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              // 정렬 위젯
+              children: <Widget>[
+                    // 복수의 위젯을 넣고자 할때 배열에 넣는다
+                    Text(_message,style:TextStyle(fontSize: 30)),
+                    Text("$_count",style:TextStyle(fontSize: 30)),
+                    // int형을 text에 넣을경우 "$_count" 선언한다, 따옴표,$
+                  ],
+                ),
+            )
+
+
+
     );
   }
 
   void _chageMessage() {
     setState(() {
       _message = " pushed: greentea";
+      _count += 1;
     });
   }
 }
